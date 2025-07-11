@@ -157,6 +157,19 @@ button {
     width: 95vw;
     padding: 15px;
   }
+
+  .popup-content .result-message {
+    font-size: 1.1em;
+  }
+
+  .popup-content .result-major {
+    font-size: 1.2em;
+  }
+
+  .popup-content button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 }
 
 @keyframes fadeIn {
