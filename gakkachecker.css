@@ -49,25 +49,6 @@ button {
   border-radius: 6px;
   cursor: pointer;
 }
-
-#result {
-  font-size: 2em;               
-  font-weight: bold;            
-  color: #007acc;               
-  text-align: center;           
-  margin-top: 40px;             
-  padding: 20px;                
-  background-color: #f0f8ff;    
-  border: 2px solid #007acc;    
-  border-radius: 10px;          
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-  transition: transform 0.3s;   
-  animation: fadeIn 0.5s ease-in-out;
-  width: 95%;
-  max-width: 900px;
-  overflow: visible;
-}
-
 #result:hover {
   transform: scale(1.05);       
 }
