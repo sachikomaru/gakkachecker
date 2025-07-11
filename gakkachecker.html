@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>学科向き調査アンケート</title>
+
+</head>
+<body>
+
+<h1>あなたに向いている学科は？</h1>
+
+
+<form id="surveyForm">
+  <div class="checkbox-container">
+    <div class="item"><label><input type="checkbox" name="interest" value="0" /> プログラミング</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="1" /> ゲーム開発</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="2" /> ロボット</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="3" /> ドローン</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="4" /> AI（人工知能）</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="5" /> IoT</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="6" /> センサー</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="7" /> 自動運転</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="8" /> データ分析</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="9" /> アプリ開発</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="10" /> 電気回路</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="11" /> 通信技術</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="12" /> 半導体</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="13" /> スマホの仕組み</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="14" /> 5G / 6G</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="15" /> 宇宙開発</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="16" /> 飛行機</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="17" /> 自動車</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="18" /> エネルギー問題</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="19" /> 環境問題</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="20" /> 再生可能エネルギー</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="21" /> 水素エネルギー</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="22" /> 工場の自動化</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="23" /> 生物の不思議</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="24" /> 化学実験</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="25" /> 医薬品</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="26" /> 食品開発</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="27" /> バイオテクノロジー</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="28" /> 遺伝子</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="29" /> デザイン</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="30" /> モノづくり</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="31" /> 回路設計</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="32" /> ゲームAI</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="33" /> 機械の仕組み</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="34" /> システム開発</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="35" /> スマート農業</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="36" /> 農業×テクノロジー</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="37" /> 知能ロボット</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="38" /> 人工生命</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="39" /> ナノテクノロジー</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="40" /> 材料開発</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="41" /> クリーンエネルギー</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="42" /> 燃料電池</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="43" /> VR・AR</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="44" /> メタバース</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="45" /> ネットワーク</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="46" /> パソコンを組む</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="47" /> マイコン</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="48" /> 技術で人を助ける</label></div>
+    <div class="item"><label><input type="checkbox" name="interest" value="49" /> 科学が好き</label></div>
+  </div>
+  <button type="button" onclick="calculateResult()">診断する</button>
+</form>
+<div id="popup" class="popup hidden">
+  <div class="popup-content">
+  <div id="result"></div>
+  </div>
+</div>
+<link rel="stylesheet" href="gakkachecker.css">
+<script src="gakkachecker.js"></script>
+
+</body>
+</html>
