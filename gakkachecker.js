@@ -86,29 +86,58 @@ const weights = [
   showPopup(topMajors);
 }
 
-function showPopup(topMajors) {
+function calculateResult() {
+  const checkboxes = document.querySelectorAll('input[name="interest"]:checked');
+  if (checkboxes.length === 0) {
+    alert("少なくとも1つ選択してください。");
+    return;
+  }
+
+  const scores = [0, 0, 0, 0, 0];
+  checkboxes.forEach(cb => {
+    const idx = parseInt(cb.value, 10);
+    if (weights[idx]) {
+      for (let i = 0; i < scores.length; i++) {
+        scores[i] += weights[idx][i];
+      }
+    }
+  });
+
+  const ranked = scores
+    .map((score, i) => ({ i, score }))
+    .sort((a, b) => b.score - a.score);
+
+  const topRanks = [];
+  let prevScore = null;
+  let rank = 0;
+
+  for (let idx = 0; idx < ranked.length && topRanks.length < 3; idx++) {
+    if (ranked[idx].score !== prevScore) {
+      rank = topRanks.length + 1;
+    }
+    topRanks.push({ rank: rank, major: majors[ranked[idx].i], score: ranked[idx].score });
+    prevScore = ranked[idx].score;
+  }
+
+  showPopup(topRanks);
+}
+
+function showPopup(results) {
   const popup = document.getElementById("popup");
   const content = popup.querySelector(".popup-content #result");
 
-  if (topMajors.length === 1) {
-    content.innerHTML = `
-      <div class="result-message">あなたに最も向いている学科は</div>
-      <div class="result-major">「${topMajors[0]}」</div>
-      <br>
-      <button onclick="closePopup()">閉じる</button>
-    `;
-  } else {
-    const majorsHTML = topMajors.map(m => `<div class="result-major">「${m}」</div>`).join("");
-    content.innerHTML = `
-      <div class="result-message">あなたに向いている学科は複数あります：</div>
-      ${majorsHTML}
-      <br>
-      <button onclick="closePopup()">閉じる</button>
-    `;
-  }
+  let html = `<div class="result-message">あなたに向いている学科は</div>\n`;
 
+  results.forEach(r => {
+    html += `<div class="result-major">${r.rank}位:「${r.major}」</div><br>\n`;
+  });
+
+  html += `<br><button onclick="closePopup()">閉じる</button>`;
+
+  content.innerHTML = html;
   popup.classList.remove("hidden");
 }
+
 
 function closePopup() {
   const popup = document.getElementById("popup");

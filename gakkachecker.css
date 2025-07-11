@@ -61,7 +61,6 @@ button {
 
 .result-major {
   display: inline-block;
-  font-size: clamp(1.5rem, 5vw, 2rem);
   font-weight: bold;
   color: #007acc;
   white-space: normal;
@@ -108,10 +107,7 @@ button {
   font-size: 1.5em;
   font-weight: bold;
   color: #007acc;
-  margin-bottom: 20px;
-  white-space: normal;
-  overflow: visible;
-  text-overflow: unset;
+  
 }
 
 .popup-content button {
