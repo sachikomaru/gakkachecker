@@ -126,7 +126,7 @@ function showPopup(results) {
   const popup = document.getElementById("popup");
   const content = popup.querySelector(".popup-content #result");
 
-  let html = `<div class="result-message">あなたに向いている学科は</div>\n`;
+  let html = `<div class="result-message">あなたにオススメの学科は！</div>\n`;
 
   results.forEach(r => {
     html += `<div class="result-major">${r.rank}位:「${r.major}」</div><br>\n`;
@@ -143,3 +143,7 @@ function closePopup() {
   const popup = document.getElementById("popup");
   popup.classList.add("hidden");
 }
+  function resetCheckboxes() {
+    const checkboxes = document.querySelectorAll('input[name="interest"]');
+    checkboxes.forEach(cb => cb.checked = false);
+  }

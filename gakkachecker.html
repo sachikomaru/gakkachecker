@@ -6,11 +6,12 @@
 <title>学科向き調査アンケート</title>
 
 </head>
+<button id="backToTopBtn" onclick="scrollToTop()">↑</button>
 <body>
 
-<h1>あなたに向いている学科は？</h1>
+<h1>あなたにオススメの学科は？</h1>
 
-
+<h2>気になるキーワードを５～１０個くらい選んでみよう!</h2>
 <form id="surveyForm">
   <div class="checkbox-container">
     <div class="item"><label><input type="checkbox" name="interest" value="0" /> プログラミング</label></div>
@@ -65,6 +66,8 @@
     <div class="item"><label><input type="checkbox" name="interest" value="49" /> 科学が好き</label></div>
   </div>
   <button type="button" onclick="calculateResult()">診断する</button>
+  <br>
+  <button type="button" onclick="resetCheckboxes()">リセット</button>
 </form>
 <div id="popup" class="popup hidden">
   <div class="popup-content">
