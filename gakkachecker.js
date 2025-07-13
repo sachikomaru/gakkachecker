@@ -146,4 +146,18 @@ function closePopup() {
   function resetCheckboxes() {
     const checkboxes = document.querySelectorAll('input[name="interest"]');
     checkboxes.forEach(cb => cb.checked = false);
+  }  window.addEventListener("scroll", function () {
+    const btn = document.getElementById("backToTopBtn");
+    if (window.scrollY > 200) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  });
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   }
